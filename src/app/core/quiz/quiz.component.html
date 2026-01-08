@@ -1,0 +1,11 @@
+
+<div>
+  <h1> {{quiz.name}}</h1>
+@for (q of quiz.questions; track $index) 
+{
+    @if ($index==pg) {
+  <app-question [qt]="q"></app-question>
+    }
+}
+<app-pagening (notif)="recuper($event)"></app-pagening>
+</div>

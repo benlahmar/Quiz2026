@@ -1,0 +1,18 @@
+<h1>{{data.name}}</h1>
+<p>{{data.description}}</p>
+
+@for(qt of data.questions; track qt.id){
+    @if($index==page){
+<div>
+    <h6>{{$index+1}}.{{qt.name}}</h6>
+    @for(p of qt.options; track p.id)
+    {
+    <div>
+        <input type="radio" /> {{p.name}}
+
+    </div>
+    }
+</div>
+<button (click)="next()">Next</button>
+    }
+}

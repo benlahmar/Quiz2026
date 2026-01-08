@@ -1,0 +1,7 @@
+<div>
+    <p>{{qt.name}}</p>
+    @for(o of qt.options; track o.id)
+    {
+        <app-option [opt]="o"></app-option>
+    }
+</div>

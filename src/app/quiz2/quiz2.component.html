@@ -1,0 +1,87 @@
+<h1>{{data.name}}</h1>
+<p>{{data.description}}</p>
+<div>
+  <button type="button" (click)="changemode('quiz')" class="btn btn-outline-primary">Quiz</button>
+<button type="button" (click)="changemode('review')" class="btn btn-outline-secondary">Review</button>
+<button type="button" (click)="changemode('submit')" class="btn btn-outline-success">Submit</button>
+</div>
+<div class="row conainer">
+  <div class="col-3"></div>
+  @if (modedisplay=='quiz') {
+<div class="col-6">
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+@for(q of data2.questions; track q.id)
+{
+    @if($index==page)
+    {
+      
+       
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar" [style]="'width:'+ page/(data.questions.length-1)*100+'%'">{{page/(data.questions.length)*100}}%</div>
+</div>
+    <div>
+       {{$index+1}} . {{q.name}}
+        @for(o of q.options; track o.id)
+        {
+            <div>
+                <input type="checkbox" [(ngModel)]="o.isSelected" /> {{o.name}}
+            </div>
+        }
+    </div>
+      <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link"  (click)="prev()" [hidden]="page==0">Previous</a></li>
+    <li class="page-item"><a class="page-link">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" (click)="next()" [hidden]="page==data.questions.length-1">Next</a></li>
+  </ul>
+</nav>
+}
+}
+</div>
+</div>
+</div>
+  }
+  @if (modedisplay=='review') {
+    <div class="col-12">
+      Review Mode
+<div class="row">
+      @for(q of data2.questions; track q.id)
+{
+    <div [class]="!isquestionserlected(q)?'col-md-3 alert alert-danger':'col-md-3 alert alert-success'" role="alert">
+       {{$index+1}} . {{q.name}}
+        </div>
+     
+
+}
+</div>
+    </div>
+  }
+  @if (modedisplay=='submit') {
+    <div class="col-6">
+      @for(q of data2.questions; track q.id)
+{
+   
+       
+       
+    <div [class]= "isQuestioncorrect(q)?'alert alert-success':'alert alert-danger'" role="alert">
+       {{$index+1}} . {{q.name}}
+        @for(o of q.options; track o.id)
+        {
+            <div>
+                <input type="checkbox" [(ngModel)]="o.isSelected" disabled /> {{o.name}}
+            </div>
+        }
+    </div>
+      
+
+}
+    </div>
+  }
+</div>
+
