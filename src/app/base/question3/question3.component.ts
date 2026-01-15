@@ -14,4 +14,18 @@ export class Question3Component {
   data:Question;
   @Input()
   display:string;
+
+
+  isSelected()
+  {
+    let state=this.data.options.filter(o=>o.isSelected).length>0;
+    console.log("dans isSelected de question3  "+ state);
+    return state;
+
+    
+  }
+  isCorrect()
+  {
+    return this.data.options.every(o=>o.isAnswer==o.isSelected);
+  }
 }

@@ -12,4 +12,7 @@ export class Option3Component {
 
   @Input()
   odata:Option;
+
+  @Input()
+  display:string;
 }

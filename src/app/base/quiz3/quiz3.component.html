@@ -1,3 +1,6 @@
+<div>
+    <app-config [data]="quiz.config"></app-config>
+</div>
 <div class="d-flex justify-content-around mb-3">
     <app-display [mode]="'quiz'" (notif)="changemode($event)"></app-display>
     <app-display [mode]="'Review'" (notif)="changemode($event)"></app-display>
@@ -32,5 +35,10 @@
 
     <div>
         Submit
+         @for (q of quiz.questions; track $index) {
+       
+        <app-question3 [display]="'submit'" [data]="q"></app-question3>
+        
+    }
     </div>
 }

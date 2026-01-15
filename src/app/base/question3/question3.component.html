@@ -1,9 +1,14 @@
 
-<div class="card mb-3">
+<div [class]="display=='Review'? isSelected()?'card alert alert-success':'card alert alert-danger':'card mb-3'">
     <p>{{ data.name }}</p>
     @if(display!=='Review') {
     @for (o of data.options; track $index) {
-        <app-option3 [odata]="o"></app-option3>
+        <app-option3 [display]="display" [odata]="o"></app-option3>
     }
+}
+@if (display=='submit') {
+<div [class]="!isCorrect()?'alert alert-danger':'alert alert-success'" role="alert">
+    Votre reponse est : {{isCorrect()?"Correct":"Incorrect"}}
+</div>
 }
 </div>

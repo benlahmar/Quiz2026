@@ -1,0 +1,33 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+       Configuration du QuiZ
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+       <form>
+        
+      
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">allowBack </label>
+          <input type="checkbox" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.allowBack" name="autoBack">
+      </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">autoMove </label>
+            <input type="checkbox" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.autoMove" name="autoMove">
+       </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">duration </label>
+            <input type="number" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.duration" name="duration">
+         </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">pageSize </label>
+            <input type="number" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.pageSize" name="pageSize">
+            </div>
+        </form>
+  </div>
+  </div>
+    
+    

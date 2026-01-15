@@ -4,10 +4,11 @@ import { qz } from '../../data/d';
 import { Question3Component } from "../question3/question3.component";
 import { PaginationComponent } from "../pagination/pagination.component";
 import { DisplayComponent } from "../display/display.component";
+import { ConfigComponent } from "../config/config.component";
 
 @Component({
   selector: 'app-quiz3',
-  imports: [Question3Component, PaginationComponent, DisplayComponent],
+  imports: [Question3Component, PaginationComponent, DisplayComponent, ConfigComponent],
   templateUrl: './quiz3.component.html',
   styleUrl: './quiz3.component.css'
 })
