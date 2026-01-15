@@ -1,0 +1,9 @@
+
+<div class="card mb-3">
+    <p>{{ data.name }}</p>
+    @if(display!=='Review') {
+    @for (o of data.options; track $index) {
+        <app-option3 [odata]="o"></app-option3>
+    }
+}
+</div>

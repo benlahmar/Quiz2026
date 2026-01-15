@@ -1,0 +1,13 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li [class]="p==0?'page-item disabled':'page-item'">
+      <a class="page-link" (click)="send(p-1)">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" (click)="send(1)" >1</a></li>
+    <li class="page-item"><a class="page-link" (click)="send(2)">2</a></li>
+    <li class="page-item"><a class="page-link" (click)="send(3)">3</a></li>
+    <li class="page-item">
+      <a class="page-link" (click)="send(p+1)">Next</a>
+    </li>
+  </ul>
+</nav>

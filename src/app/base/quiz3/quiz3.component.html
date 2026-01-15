@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-around mb-3">
+    <app-display [mode]="'quiz'" (notif)="changemode($event)"></app-display>
+    <app-display [mode]="'Review'" (notif)="changemode($event)"></app-display>
+    <app-display [mode]="'submit'" (notif)="changemode($event)"></app-display>
+</div>
+<div>
+    <h3>{{ quiz.name }}</h3>
+    <p>{{ quiz.description }}</p>
+    @if (modedisplay=='quiz') {
+    <div>
+        <app-pagination  (notif)="recuper($event)"></app-pagination>
+    </div>
+    @for (q of quiz.questions; track $index) {
+        @if ($index==currentquestion) {
+        <app-question3 [display]="'quiz'" [data]="q"></app-question3>
+        }
+    }
+}
+</div>
+@if (modedisplay=='Review') {
+
+    <div>
+        Review
+         @for (q of quiz.questions; track $index) {
+       
+        <app-question3 [display]="'Review'" [data]="q"></app-question3>
+        
+    }
+    </div>
+}
+@if (modedisplay=='submit') {
+
+    <div>
+        Submit
+    </div>
+}
