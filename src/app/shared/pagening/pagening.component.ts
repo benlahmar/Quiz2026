@@ -14,7 +14,7 @@ export class PageningComponent {
   p:number=0;
   send(page:number)
   {
-    this.p=page+1;
-    this.notif.emit(page);
+    this.p=page;
+    this.notif.emit(this.p);
   }
 }

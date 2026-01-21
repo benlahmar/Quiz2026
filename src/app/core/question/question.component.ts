@@ -12,4 +12,17 @@ export class QuestionComponent {
 
   @Input()
   qt:Question;
+
+  @Input()
+  mode:string;
+
+  isSelected()
+  {
+    return this.qt.options.filter(o=>o.isSelected).length>0;
+  }
+
+  isCorrect()
+  {
+    return this.qt.options.every(o => o.isSelected === o.isAnswer);
+  }
 }

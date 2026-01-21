@@ -1,11 +1,44 @@
+<div class="container">
+    <app-display  (notif)="getdispaly($event)" [mdisplay]="'quiz'" ></app-display>
+    <app-display  (notif)="getdispaly($event)" [mdisplay]="'review'"></app-display>
+    <app-display  (notif)="getdispaly($event)" [mdisplay]="'submit'"></app-display>
+
+</div>
 
 <div>
-  <h1> {{quiz.name}}</h1>
+  <h1> {{quiz.name}}</h1>   
+  @if(mode=='quiz') {
+  <div >
 @for (q of quiz.questions; track $index) 
 {
     @if ($index==pg) {
-  <app-question [qt]="q"></app-question>
+  <app-question [qt]="q" [mode]="mode"></app-question>
     }
 }
 <app-pagening (notif)="recuper($event)"></app-pagening>
+</div>
+  }
+  @if(mode=='review') {
+    <div>
+      Review
+      @for (q of quiz.questions; track $index) 
+{
+   
+  <app-question [qt]="q" [mode]="mode"></app-question>
+    
+}
+    </div>
+  }
+
+  @if(mode=="submit") {
+    <div>
+      Submit
+       @for (q of quiz.questions; track $index) 
+{
+   
+  <app-question [qt]="q" [mode]="mode"></app-question>
+    
+}
+    </div>
+  }
 </div>

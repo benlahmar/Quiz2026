@@ -12,4 +12,7 @@ export class OptionComponent {
 
   @Input()
   opt:Option;
+
+  @Input()
+  mode:string;
 }

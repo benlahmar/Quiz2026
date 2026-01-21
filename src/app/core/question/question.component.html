@@ -1,7 +1,12 @@
-<div>
-    <p>{{qt.name}}</p>
+<div [class]="mode==='submit' ? isCorrect()?'alert alert-success' : 'alert alert-danger':''">
+    <p [class]="mode==='review' ? isSelected()?'alert alert-success' : 'alert alert-danger':''">{{qt.name}}</p>
+    @if(mode!=='review') {
     @for(o of qt.options; track o.id)
     {
-        <app-option [opt]="o"></app-option>
+        <app-option [opt]="o" [mode]="mode"></app-option>
     }
+}
+@if(mode=='submit') {
+<code>votre reponse est : {{isCorrect()?' Correct':'incorrect'}}</code>
+}
 </div>
