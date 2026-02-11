@@ -1,9 +1,19 @@
 <div class="container">
+  <app-quiz-configuration [data]="quiz.config"></app-quiz-configuration>
+</div>
+
+<div class="container my-3">
     <app-display  (notif)="getdispaly($event)" [mdisplay]="'quiz'" ></app-display>
+    @if (quiz.config.allowReview) {
     <app-display  (notif)="getdispaly($event)" [mdisplay]="'review'"></app-display>
+    }
     <app-display  (notif)="getdispaly($event)" [mdisplay]="'submit'"></app-display>
 
 </div>
+<div class="container my-3">
+  {{curentdate}}
+  <hr/>
+  {{duration/60 }}
 
 <div>
   <h1> {{quiz.name}}</h1>   
@@ -15,7 +25,7 @@
   <app-question [qt]="q" [mode]="mode"></app-question>
     }
 }
-<app-pagening (notif)="recuper($event)"></app-pagening>
+<app-pagening [config]="quiz.config" (notif)="recuper($event)"></app-pagening>
 </div>
   }
   @if(mode=='review') {

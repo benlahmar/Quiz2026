@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
@@ -8,6 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class PaginationComponent {
 
+  @Input()
+  allowback:boolean;
   @Output()
   notif:EventEmitter<number>=new EventEmitter<number>();
   p=0;

@@ -1,0 +1,32 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Configuration
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+
+        <form>
+            <div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked" [(ngModel)]="data.allowBack" name="allowBack">
+  <label class="form-check-label" for="switchCheckChecked">Allow Back</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked2" [(ngModel)]="data.allowReview" name="allowReview">
+  <label class="form-check-label" for="switchCheckChecked2">Allow Review</label>
+</div>
+<div class="form-input">
+  <label for="timeLimit" class="form-label">Time Limit (minutes)</label>
+  <input type="number" class="form-control" id="timeLimit" [(ngModel)]="data.duration" name="timeLimit">
+</div>
+          </form>
+          
+          
+          
+
+    </div>
+    </div>
+  </div>
+</div>

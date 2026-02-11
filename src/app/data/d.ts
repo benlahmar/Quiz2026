@@ -377,5 +377,6 @@ export const  qz={
     showClock: true,
     showPager: true
     
+    
     }
 };

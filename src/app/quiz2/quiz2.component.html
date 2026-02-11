@@ -1,9 +1,14 @@
+<div >
+  <app-quiz-configuration [data]="data.config"></app-quiz-configuration>
+</div>
 <h1>{{data.name}}</h1>
 <p>{{data.description}}</p>
 <div>
   <button type="button" (click)="changemode('quiz')" class="btn btn-outline-primary">Quiz</button>
-<button type="button" (click)="changemode('review')" class="btn btn-outline-secondary">Review</button>
-<button type="button" (click)="changemode('submit')" class="btn btn-outline-success">Submit</button>
+@if(data.config.allowReview){
+  <button type="button" (click)="changemode('review')" class="btn btn-outline-secondary">Review</button>
+}
+  <button type="button" (click)="changemode('submit')" class="btn btn-outline-success">Submit</button>
 </div>
 <div class="row conainer">
   <div class="col-3"></div>

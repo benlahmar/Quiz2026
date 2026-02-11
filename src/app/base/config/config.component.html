@@ -10,22 +10,30 @@
        <form>
         
       
+        <div class="form-check form-switch">
+  <input (change)="send(data)" class="form-check-input" type="checkbox" role="switch" id="AllowBack" [(ngModel)]="data.allowBack" name="AllowBack">
+  <label class="form-check-label" for="AllowBack">AllowBack</label>
+</div>
+<div class="form-check form-switch">
+  <input (change)="send(data)" class="form-check-input" type="checkbox" role="switch" id="AllowReview" [(ngModel)]="data.allowReview" name="AllowReview">
+  <label class="form-check-label" for="AllowReview">AllowReview</label>
+</div>
+        <div class="form-check form-switch">
+  <input (change)="send(data)"  class="form-check-input" type="checkbox" role="switch" id="autoMove" [(ngModel)]="data.autoMove" name="autoMove">
+  <label class="form-check-label" for="autoMove">autoMove</label>
+</div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">allowBack </label>
-          <input type="checkbox" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.allowBack" name="autoBack">
-      </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">autoMove </label>
-            <input type="checkbox" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.autoMove" name="autoMove">
-       </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">duration </label>
-            <input type="number" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.duration" name="duration">
+            <label for="duration" class="form-label">duration </label>
+            <input type="number" class="form-control" id="duration" [(ngModel)]="data.duration" name="duration">
          </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">pageSize </label>
-            <input type="number" class="form-control" id="exampleInputPassword1" [(ngModel)]="data.pageSize" name="pageSize">
+            <label for="pageSize" class="form-label">pageSize </label>
+            <input type="number" class="form-control" id="pageSize" [(ngModel)]="data.pageSize" name="pageSize">
             </div>
+            <div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="showClock" [(ngModel)]="data.showClock" name="showClock">
+  <label class="form-check-label" for="showClock">showClock</label>
+</div>
         </form>
   </div>
   </div>

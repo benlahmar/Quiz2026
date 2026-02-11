@@ -1,0 +1,10 @@
+<div class="row">
+    <div>
+        {{result}}
+    </div>
+    @for (us of users; track $index) {
+         <div class="col-md-4">
+        <app-user [u]="us"></app-user>
+        </div>
+    }
+</div>

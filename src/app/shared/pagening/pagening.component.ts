@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Config } from '../../models/config';
 
 @Component({
   selector: 'app-pagening',
@@ -11,6 +12,8 @@ export class PageningComponent {
   @Output()
   notif:EventEmitter<number>=new EventEmitter<number>();
 
+  @Input()
+  config:Config;
   p:number=0;
   send(page:number)
   {

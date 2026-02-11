@@ -3,10 +3,11 @@ import { qz } from '../data/d';
 import { Quiz } from '../models/Quiz';
 import { FormsModule } from '@angular/forms';
 import { Question } from '../models/question';
+import { QuizConfigurationComponent } from "../g1/quiz-configuration/quiz-configuration.component";
 
 @Component({
   selector: 'app-quiz2',
-  imports: [FormsModule],
+  imports: [FormsModule, QuizConfigurationComponent],
   templateUrl: './quiz2.component.html',
   styleUrl: './quiz2.component.css'
 })

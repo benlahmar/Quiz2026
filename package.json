@@ -17,6 +17,7 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@google/genai": "^1.40.0",
     "bootstrap": "^5.3.8",
     "g": "^2.0.1",
     "jquery": "^3.7.1",

@@ -1,17 +1,24 @@
-<div>
-    <app-config [data]="quiz.config"></app-config>
+<div >
+    <app-config [data]="quiz.config" (notif)="recuperconf($event)"></app-config>
 </div>
-<div class="d-flex justify-content-around mb-3">
+<div  class="d-flex justify-content-around mb-3">
     <app-display [mode]="'quiz'" (notif)="changemode($event)"></app-display>
+    @if (quiz.config.allowReview) {
     <app-display [mode]="'Review'" (notif)="changemode($event)"></app-display>
+    }
     <app-display [mode]="'submit'" (notif)="changemode($event)"></app-display>
 </div>
+
 <div>
-    <h3>{{ quiz.name }}</h3>
+    <h3 appCol="green">{{ quiz.name }}</h3>
     <p>{{ quiz.description }}</p>
+    <h2 >{{duree | number:'1.0-0'}}s</h2>
+    @if(quiz.config.showClock) {
+    <code >{{ date | date:'HH:mm:ss'}}</code>
+    }   
     @if (modedisplay=='quiz') {
     <div>
-        <app-pagination  (notif)="recuper($event)"></app-pagination>
+        <app-pagination [allowback]="quiz.config.allowBack"  (notif)="recuper($event)"></app-pagination>
     </div>
     @for (q of quiz.questions; track $index) {
         @if ($index==currentquestion) {

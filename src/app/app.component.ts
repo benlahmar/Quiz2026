@@ -6,10 +6,12 @@ import { QuizComponent } from "./core/quiz/quiz.component";
 import { Quiz3Component } from "./base/quiz3/quiz3.component";
 import { Option3Component } from "./base/option3/option3.component";
 import { Option } from './models/option';
+import { UserComponent } from "./base/user/user.component";
+import { ListUserComponent } from "./base/list-user/list-user.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Quiz2Component, QuizComponent, Quiz3Component, Option3Component],
+  imports: [RouterOutlet, Quiz2Component, QuizComponent, Quiz3Component, Option3Component, UserComponent, ListUserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
