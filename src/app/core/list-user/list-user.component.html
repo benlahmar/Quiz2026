@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        @for (u of users; track $index) {
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+  <img src="https://comitsolution.com/admin/assets/images/profile.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{u.name }}</h5>
+    <p class="card-text">{{u.username}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+        </div>
+    }
+    </div>
+</div>

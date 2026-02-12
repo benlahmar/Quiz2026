@@ -7,7 +7,7 @@ import { Quiz3Component } from "./base/quiz3/quiz3.component";
 import { Option3Component } from "./base/option3/option3.component";
 import { Option } from './models/option';
 import { UserComponent } from "./base/user/user.component";
-import { ListUserComponent } from "./base/list-user/list-user.component";
+import { ListUserComponent as ListUserComponent } from "./core/list-user/list-user.component";
 
 @Component({
   selector: 'app-root',

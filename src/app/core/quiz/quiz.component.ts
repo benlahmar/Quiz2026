@@ -6,6 +6,7 @@ import { PageningComponent } from "../../shared/pagening/pagening.component";
 import { DisplayComponent } from '../../shared/display/display.component';
 import { QuizConfigurationComponent } from "../../g1/quiz-configuration/quiz-configuration.component";
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../g1/services/user.service';
 @Component({
   selector: 'app-quiz',
   imports: [QuestionComponent, PageningComponent, DisplayComponent, QuizConfigurationComponent, CommonModule],
@@ -21,10 +22,14 @@ export class QuizComponent implements OnInit {
    curentdate:Date;
   duration:number;
 
-   constructor() { }
+  msg:any;
+   constructor(private service:UserService) { }
    
    ngOnInit(): void {
     this.quiz=new Quiz(qz);
+
+  
+
     this.datestart=new Date();
     setInterval(() => {
       this.curentdate=new Date();

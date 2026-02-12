@@ -4,10 +4,12 @@ import { GoogleGenAI } from '@google/genai';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AiService {
   // Initialisation du client avec la nouvelle syntaxe
   private ai = new GoogleGenAI({
-    apiKey: "*******"
+    apiKey: "xxxx"
   });
 
   async getAiExplanation(prompt: string): Promise<string> {

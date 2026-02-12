@@ -9,6 +9,7 @@ import { Config } from '../../models/config';
 import { ColDirective } from "../../shared/directives/col.directive";
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/users/user.service';
+import { UsrService } from '../services/usr.service';
 
 @Component({
   selector: 'app-quiz3',
@@ -25,11 +26,17 @@ export class Quiz3Component implements OnInit {
   datestart:Date;
   duree:number;
 
-    constructor(public uservice:UserService )
+    constructor(public uservice:UserService, private userservice:UsrService )
     {}
 
   ngOnInit(): void {
     
+    console.log("avant")
+    this.userservice.getusers().subscribe(d=>{
+      console.log(d)
+    })
+
+    console.log("apres")
     this.quiz=new Quiz(qz);
     let d=this.quiz.config.duration+1;
     this.date=new Date();

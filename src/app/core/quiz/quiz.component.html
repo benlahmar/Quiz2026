@@ -2,6 +2,12 @@
   <app-quiz-configuration [data]="quiz.config"></app-quiz-configuration>
 </div>
 
+  <select>
+  @for (u of msg; track $index) {
+    <option>{{u.name}}</option>
+  }
+  </select>
+
 <div class="container my-3">
     <app-display  (notif)="getdispaly($event)" [mdisplay]="'quiz'" ></app-display>
     @if (quiz.config.allowReview) {
